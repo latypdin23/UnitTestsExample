@@ -8,6 +8,7 @@ namespace Rectangle
 {
     public class MainFormViewModel
     {
+
         public string Width { get; set; }
         public string Length { get; set; }
         private int GetLength()
@@ -21,7 +22,7 @@ namespace Rectangle
                 throw new ArgumentException("Длина должна быть положительным числом.", nameof(Length));
             }
 
-            return length;
+            return 0;
         }
 
         private int GetWidth()
