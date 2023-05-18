@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TaskManager
 {
@@ -32,5 +29,10 @@ namespace TaskManager
         public Employer Initiator { get { return initiator; } set {  initiator = value; } }
         public Employer Ispolnitel { get { return ispolnitel; } set {  ispolnitel = value; } }
         public List<Report> Reports { get; set; }
+        public void DoReport()
+        {
+            Report report = new Report();
+            Reports.Add(report);
+        }
     }
 }
