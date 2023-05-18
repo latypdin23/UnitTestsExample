@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8ECCD733-4A69-4AB8-A7F8-1382ACF3B6CC}</ProjectGuid>
+    <ProjectGuid>{C58494EA-F26D-4C1D-B57D-6B2BF924712C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MainLogic</RootNamespace>
-    <AssemblyName>MainLogic</AssemblyName>
+    <RootNamespace>TaskManager</RootNamespace>
+    <AssemblyName>TaskManager</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,13 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.5.1.4\lib\net46\NLog.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,14 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmployerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployerForm.Designer.cs">
+      <DependentUpon>EmployerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Department.cs" />
+    <Compile Include="Model\Employer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EmployerForm.resx">
+      <DependentUpon>EmployerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -71,13 +77,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Content Include="NLog.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <None Include="NLog.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -90,12 +89,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Rectangle\Rectangle.csproj">
-      <Project>{aaace822-5f17-413d-93ed-4c79dcdea99f}</Project>
-      <Name>Rectangle</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
