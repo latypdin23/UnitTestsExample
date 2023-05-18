@@ -156,5 +156,9 @@ namespace TaskManager
                 return Surname+" "+Name;
             }
         }
+        public void GiveTask(Task task,Employer to)
+        {
+
+        }
     }
 }

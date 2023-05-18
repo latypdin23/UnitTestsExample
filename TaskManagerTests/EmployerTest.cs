@@ -16,7 +16,7 @@ namespace TaskManagerTests
 
             
             // Такой тест не пройдет
-            // Assert.AreEqual("Dina12#", employer.Name);
+            //Assert.AreEqual("Dina12#", employer.Name);
             Assert.ThrowsException<ArgumentException>(() => employer.Name);
         }
         [TestMethod]

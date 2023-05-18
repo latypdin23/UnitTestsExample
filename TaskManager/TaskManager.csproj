@@ -60,6 +60,10 @@
     </Compile>
     <Compile Include="Model\Department.cs" />
     <Compile Include="Model\Employer.cs" />
+    <Compile Include="Model\Project.cs" />
+    <Compile Include="Model\Report.cs" />
+    <Compile Include="Model\Status.cs" />
+    <Compile Include="Model\Task.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EmployerForm.resx">
