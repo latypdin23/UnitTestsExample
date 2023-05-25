@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Authentication.ExtendedProtection.Configuration;
 using System.Text.RegularExpressions;
 
 namespace TaskManager
@@ -155,10 +154,6 @@ namespace TaskManager
             {
                 return Surname+" "+Name;
             }
-        }
-        public void GiveTask(Task task,Employer to)
-        {
-
         }
     }
 }

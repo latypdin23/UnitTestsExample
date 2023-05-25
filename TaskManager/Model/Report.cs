@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace TaskManager
+namespace TaskManager.Model
 {
     public class Report
     {
@@ -12,8 +8,18 @@ namespace TaskManager
         public string Desription { get; set; }
         public DateTime DateStart { get; set; }
         public DateTime DateEnd { get; set; }
-        public Status Status { get; set; }
-        public void SendToCheck()
+        public State Status { get; set; }
+        public Report() { }
+        public Report(int id, string desription, DateTime dateStart, DateTime dateEnd)
+        {
+            Id = id;
+            Desription = desription;
+            DateStart = dateStart;
+            DateEnd = dateEnd;
+            Status = State.Проект;
+        }
+
+        public void SendToCheck(Employer to)
         {
             //todo
         }

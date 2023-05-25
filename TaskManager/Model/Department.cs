@@ -14,6 +14,7 @@ namespace TaskManager
         /// Название
         /// </summary>
         public string Name { get; set; }
+        public Department() { }
         public Department(long id, string name)
         {
             Id = id;

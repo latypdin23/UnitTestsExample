@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TaskManager.Database;
 
 namespace TaskManager
 {
@@ -15,14 +16,11 @@ namespace TaskManager
         public MainForm()
         {
             InitializeComponent();
-            Employer e=new Employer();
-            e.Name = "Dina";
-            e.DateOfBirth = new DateTime(1996, 09, 23);
+        }
 
-            if(e.DateOfBirth < DateTime.Today)
-            {
-
-            }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            List<Employer> employers = Postgres.GetAllEmployers();
             int a = 0;
         }
     }
