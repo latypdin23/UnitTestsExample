@@ -36,17 +36,17 @@
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabEmployers = new System.Windows.Forms.TabPage();
+            this.gridEmployers = new System.Windows.Forms.DataGridView();
             this.menuEmployers = new System.Windows.Forms.MenuStrip();
             this.добавитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотрToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridEmployers = new System.Windows.Forms.DataGridView();
             this.tabs.SuspendLayout();
             this.tabTasks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTasks)).BeginInit();
             this.menuTasks.SuspendLayout();
             this.tabEmployers.SuspendLayout();
-            this.menuEmployers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEmployers)).BeginInit();
+            this.menuEmployers.SuspendLayout();
             this.SuspendLayout();
             // 
             // panleUser
@@ -114,6 +114,7 @@
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
             this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
             this.добавитьToolStripMenuItem.Text = "Добавить";
+            this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.добавитьToolStripMenuItem_Click);
             // 
             // просмотрToolStripMenuItem
             // 
@@ -133,6 +134,18 @@
             this.tabEmployers.TabIndex = 0;
             this.tabEmployers.Text = "Сотрудники";
             this.tabEmployers.UseVisualStyleBackColor = true;
+            // 
+            // gridEmployers
+            // 
+            this.gridEmployers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridEmployers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridEmployers.Location = new System.Drawing.Point(3, 30);
+            this.gridEmployers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridEmployers.Name = "gridEmployers";
+            this.gridEmployers.RowHeadersWidth = 51;
+            this.gridEmployers.RowTemplate.Height = 24;
+            this.gridEmployers.Size = new System.Drawing.Size(786, 343);
+            this.gridEmployers.TabIndex = 2;
             // 
             // menuEmployers
             // 
@@ -158,18 +171,6 @@
             this.просмотрToolStripMenuItem1.Size = new System.Drawing.Size(94, 24);
             this.просмотрToolStripMenuItem1.Text = "Просмотр";
             // 
-            // gridEmployers
-            // 
-            this.gridEmployers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridEmployers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridEmployers.Location = new System.Drawing.Point(3, 30);
-            this.gridEmployers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridEmployers.Name = "gridEmployers";
-            this.gridEmployers.RowHeadersWidth = 51;
-            this.gridEmployers.RowTemplate.Height = 24;
-            this.gridEmployers.Size = new System.Drawing.Size(786, 343);
-            this.gridEmployers.TabIndex = 2;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -189,9 +190,9 @@
             this.menuTasks.PerformLayout();
             this.tabEmployers.ResumeLayout(false);
             this.tabEmployers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEmployers)).EndInit();
             this.menuEmployers.ResumeLayout(false);
             this.menuEmployers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridEmployers)).EndInit();
             this.ResumeLayout(false);
 
         }

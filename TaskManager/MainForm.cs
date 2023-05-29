@@ -8,11 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskManager.Database;
+using TaskManager.Model;
 
 namespace TaskManager
 {
     public partial class MainForm : Form
     {
+        List<Employer> employers;
+        List<Project> projects;
+        List<Task> tasks;
+
         public MainForm()
         {
             InitializeComponent();
@@ -20,8 +25,23 @@ namespace TaskManager
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            List<Employer> employers = Postgres.GetAllEmployers();
-            int a = 0;
+            employers = Postgres.GetAllEmployers();
+            projects = Postgres.GetAllProjects();
+            tasks = Postgres.GetAllTasks();
+
+            gridEmployers.DataSource= employers;
+            gridTasks.DataSource= tasks;
+        }
+
+        private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using(TaskForm taskForm=new TaskForm())
+            {
+                if(taskForm.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
         }
     }
 }

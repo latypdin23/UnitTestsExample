@@ -31,7 +31,7 @@ namespace TaskManager
         {
             get
             {
-                if (Regex.Match(name, "^[A-Z][a-zA-Z]*$").Success)
+                if (Regex.Match(name, "^[а-яА-Я]*$").Success)
                 {
                     if (Char.IsUpper(name[0]))
                     {
@@ -60,7 +60,7 @@ namespace TaskManager
         {
             get
             {
-                if(Regex.Match(surname, "^[A-Z][a-zA-Z]*$").Success)
+                if(Regex.Match(surname, "^[а-яА-Я]*$").Success)
                 {
                     if (Char.IsUpper(name[0]))
                     {

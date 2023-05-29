@@ -8,7 +8,7 @@ namespace TaskManager.Model
         public string Desription { get; set; }
         public DateTime DateStart { get; set; }
         public DateTime DateEnd { get; set; }
-        public State Status { get; set; }
+        public Status Status { get; set; }
         public Report() { }
         public Report(int id, string desription, DateTime dateStart, DateTime dateEnd)
         {
@@ -16,7 +16,7 @@ namespace TaskManager.Model
             Desription = desription;
             DateStart = dateStart;
             DateEnd = dateEnd;
-            Status = State.Проект;
+            Status = new Status();
         }
 
         public void SendToCheck(Employer to)

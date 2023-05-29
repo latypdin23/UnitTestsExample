@@ -111,9 +111,16 @@
     <Compile Include="Model\Employer.cs" />
     <Compile Include="Model\Project.cs" />
     <Compile Include="Model\Report.cs" />
+    <Compile Include="Model\Status.cs" />
     <Compile Include="Model\Task.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaskForm.Designer.cs">
+      <DependentUpon>TaskForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="EmployerForm.resx">
       <DependentUpon>EmployerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,7 +136,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TaskForm.resx">
+      <DependentUpon>TaskForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Employer.datasource" />
+    <None Include="Properties\DataSources\TaskManager.Model.Project.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
