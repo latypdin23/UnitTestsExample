@@ -2,6 +2,7 @@
 using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using TaskManager.Model;
 
 namespace TaskManager.Database
@@ -325,7 +326,7 @@ namespace TaskManager.Database
         public static bool SaveTask(Task newData)
         {
             string sqlIns = "INSERT INTO public.task(description, datestart, dateend, initiator, ispolnitel, project, status) " +
-                   "VALUES(:description, :datestart, :dateend, :initiator, :ispolnitel, :project, :status) RETURNING Id INTO :Id";
+                   "VALUES(:description, :datestart, :dateend, :initiator, :ispolnitel, :project, :status) returning id";
             string sqlUpd = "UPDATE public.task SET id=:id, description=:description, datestart=:datestart, dateend=:dateend, initiator=:initiator, ispolnitel=:initiator, project=:project, status=:status " +
                     "WHERE Id=:Id";
             bool result = false;
@@ -346,19 +347,20 @@ namespace TaskManager.Database
                 cmd.Parameters.Add(new NpgsqlParameter(":project", getDBNull(newData.project.Id)));
                 cmd.Parameters.Add(new NpgsqlParameter(":status", getDBNull(newData.Status.Id)));
 
-                //if (newData.Id == 0)
-                //    cmd.Parameters.Add(":Id", NpgsqlDbType.Bigint);
-                //else
-                //    cmd.Parameters.Add(new NpgsqlParameter(":Id", getDBNull(newData.Id)));
+                if (newData.Id == 0)
+                {
+                   
+                }
+                else
+                {
+                    cmd.Parameters.Add(new NpgsqlParameter(":id", getDBNull(newData.Id)));
+                }
 
                 try
                 {
                     cmd.ExecuteNonQuery();
                     tr.Commit();
-                    if (newData.Id == 0)
-                    {
-                        newData.Id = int.Parse(cmd.Parameters[":Id"].Value.ToString());
-                    }
+
                     result = true;
                 }
                 catch(Exception e)

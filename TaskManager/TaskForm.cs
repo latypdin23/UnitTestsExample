@@ -44,7 +44,7 @@ namespace TaskManager
                                   dateStart.Value, dateEnd.Value,
                                   cmbInitiator.SelectedItem as Employer,
                                   cmbIspolnitel.SelectedItem as Employer,
-                                  cmbProjects.SelectedItem as Project);
+                                  cmbProjects.SelectedItem as Project,new Status(1,"Проект"));
             Postgres.SaveTask(task);
         }
     }

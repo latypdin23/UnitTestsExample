@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panleUser = new System.Windows.Forms.Panel();
             this.tabs = new System.Windows.Forms.TabControl();
             this.tabTasks = new System.Windows.Forms.TabPage();
@@ -40,6 +41,16 @@
             this.menuEmployers = new System.Windows.Forms.MenuStrip();
             this.добавитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотрToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.делегироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.taskBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.project = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Initiator = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ispolnitel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabs.SuspendLayout();
             this.tabTasks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTasks)).BeginInit();
@@ -47,6 +58,8 @@
             this.tabEmployers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEmployers)).BeginInit();
             this.menuEmployers.SuspendLayout();
+            this.contextMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panleUser
@@ -86,7 +99,18 @@
             // 
             // gridTasks
             // 
+            this.gridTasks.AutoGenerateColumns = false;
             this.gridTasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridTasks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.project,
+            this.Description,
+            this.DateStart,
+            this.DateEnd,
+            this.Initiator,
+            this.Ispolnitel,
+            this.Status});
+            this.gridTasks.ContextMenuStrip = this.contextMenu;
+            this.gridTasks.DataSource = this.taskBindingSource;
             this.gridTasks.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridTasks.Location = new System.Drawing.Point(3, 30);
             this.gridTasks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -171,6 +195,80 @@
             this.просмотрToolStripMenuItem1.Size = new System.Drawing.Size(94, 24);
             this.просмотрToolStripMenuItem1.Text = "Просмотр";
             // 
+            // contextMenu
+            // 
+            this.contextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.делегироватьToolStripMenuItem});
+            this.contextMenu.Name = "contextMenu";
+            this.contextMenu.Size = new System.Drawing.Size(176, 28);
+            // 
+            // делегироватьToolStripMenuItem
+            // 
+            this.делегироватьToolStripMenuItem.Name = "делегироватьToolStripMenuItem";
+            this.делегироватьToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.делегироватьToolStripMenuItem.Text = "Делегировать";
+            // 
+            // taskBindingSource
+            // 
+            this.taskBindingSource.DataSource = typeof(TaskManager.Task);
+            // 
+            // project
+            // 
+            this.project.DataPropertyName = "project";
+            this.project.HeaderText = "project";
+            this.project.MinimumWidth = 6;
+            this.project.Name = "project";
+            this.project.Width = 125;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Description";
+            this.Description.MinimumWidth = 6;
+            this.Description.Name = "Description";
+            this.Description.Width = 125;
+            // 
+            // DateStart
+            // 
+            this.DateStart.DataPropertyName = "DateStart";
+            this.DateStart.HeaderText = "DateStart";
+            this.DateStart.MinimumWidth = 6;
+            this.DateStart.Name = "DateStart";
+            this.DateStart.Width = 125;
+            // 
+            // DateEnd
+            // 
+            this.DateEnd.DataPropertyName = "DateEnd";
+            this.DateEnd.HeaderText = "DateEnd";
+            this.DateEnd.MinimumWidth = 6;
+            this.DateEnd.Name = "DateEnd";
+            this.DateEnd.Width = 125;
+            // 
+            // Initiator
+            // 
+            this.Initiator.DataPropertyName = "Initiator";
+            this.Initiator.HeaderText = "Initiator";
+            this.Initiator.MinimumWidth = 6;
+            this.Initiator.Name = "Initiator";
+            this.Initiator.Width = 125;
+            // 
+            // Ispolnitel
+            // 
+            this.Ispolnitel.DataPropertyName = "Ispolnitel";
+            this.Ispolnitel.HeaderText = "Ispolnitel";
+            this.Ispolnitel.MinimumWidth = 6;
+            this.Ispolnitel.Name = "Ispolnitel";
+            this.Ispolnitel.Width = 125;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
+            this.Status.Width = 125;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -193,6 +291,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridEmployers)).EndInit();
             this.menuEmployers.ResumeLayout(false);
             this.menuEmployers.PerformLayout();
+            this.contextMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -211,6 +311,16 @@
         private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem просмотрToolStripMenuItem1;
         private System.Windows.Forms.DataGridView gridEmployers;
+        private System.Windows.Forms.ContextMenuStrip contextMenu;
+        private System.Windows.Forms.ToolStripMenuItem делегироватьToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn project;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateStart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateEnd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Initiator;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ispolnitel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.BindingSource taskBindingSource;
     }
 }
 

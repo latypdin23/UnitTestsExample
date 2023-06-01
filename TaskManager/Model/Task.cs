@@ -34,7 +34,7 @@ namespace TaskManager
         public List<Report> Reports { get; set; }
         public Task() { }
         public Task(string description, DateTime dateStart, DateTime dateEnd, 
-                    Employer initiator, Employer ispolnitel, Project project)
+                    Employer initiator, Employer ispolnitel, Project project, Status status)
         {
             Description = description;
             DateStart = dateStart;
@@ -42,7 +42,7 @@ namespace TaskManager
             Initiator = initiator;
             Ispolnitel = ispolnitel;
             Reports = new List<Report>();
-            Status = new Status();
+            Status = status;
             this.project = project;
         }
 

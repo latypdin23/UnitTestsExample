@@ -141,6 +141,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Employer.datasource" />
+    <None Include="Properties\DataSources\Task.datasource" />
     <None Include="Properties\DataSources\TaskManager.Model.Project.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
